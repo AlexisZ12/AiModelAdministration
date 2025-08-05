@@ -49,6 +49,7 @@
 
 ### ▎方案三：Docker容器化部署
 **Elasticsearch独立部署**：
+
 ```bash
 docker run -d --name elasticsearch \
   -p 127.0.0.1:9200:9200 \
@@ -65,10 +66,13 @@ docker run -d --name elasticsearch \
 
 **Elasticsearch + Kibana联合部署**：
 创建专用网络
+
 ```bash
 docker network create es-net
 ```
+
 启动Elasticsearch
+
 ```bash
 docker run -d --name elasticsearch \
   --network es-net \
@@ -81,7 +85,9 @@ docker run -d --name elasticsearch \
   -v ${LOCAL_DATA_PATH}/logs:/usr/share/elasticsearch/logs \
   docker.elastic.co/elasticsearch/elasticsearch:8.15.0
 ```
+
 启动Kibana
+
 ```bash
 docker run -d --name kibana \
   --network es-net \
@@ -97,15 +103,19 @@ docker run -d --name kibana \
 ## 二、Python环境配置
 ### ▎方案一：Conda虚拟环境部署（推荐）
 创建Python 3.10虚拟环境
+
 ```bash
 conda create -n es python=3.10 -y
 conda activate es
 ```
+
 安装核心依赖
+
 ```bash
 pip install elasticsearch==8.15.0 openai pandas openpyxl
 ```
 国内使用可尝试使用清华源加速
+
 ```bash
 pip install elasticsearch==8.15.0 openai  pandas  openpyxl  -i https://pypi.tuna.tsinghua.edu.cn/simple
 ```
@@ -142,6 +152,7 @@ pip install elasticsearch==8.15.0 openai  pandas  openpyxl  -i https://pypi.tuna
 <img src="pic/007.png"  height="200" />
 8. ElasticSearch会在终端中启动，起一次启动后直接关闭  
 9. 打开配置文件`elasticsearch-8.15.0/config/elasticsearch.yml`按照一下模板修改  
+
 ```yml
 # Enable security features
 xpack.security.enabled: false
@@ -160,10 +171,12 @@ xpack.security.transport.ssl:
   keystore.path: certs/transport.p12
   truststore.path: certs/transport.p12
 ```
+
 ```yml
 # Allow HTTP API connections from anywhere
 # Connections are encrypted and require user authentication
 http.host: 127.0.0.1
 ```
+
 10. 重新启动ElasticSearch，运行文件`elasticsearch-8.15.0/bin/elasticsearch`  
 <img src="pic/008.png"  height="200" />

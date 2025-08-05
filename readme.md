@@ -125,23 +125,23 @@ pip install elasticsearch==8.15.0 openai  pandas  openpyxl  -i https://pypi.tuna
 ```
 
 ## 三、ElasticSearch设置
-初次使用需要安装IK分词器插件，并做部分设置，下面以MacOS为例进行初始化。
-1. 解压elasticsearch和IK分词器插件
+初次使用需要安装IK分词器插件，并做部分设置，下面以MacOS为例进行初始化。  
+1. 解压elasticsearch和IK分词器插件  
 ![](pic/001.png)
-2. 把IK分词器解压文件名称改为ik
+2. 把IK分词器解压文件名称改为ik  
 ![](pic/002.png)
-3. 将IK分词器插件复制到`elasticsearch-8.15.0/plugins`文件夹中
+3. 将IK分词器插件复制到`elasticsearch-8.15.0/plugins`文件夹中  
 ![](pic/003.png)
-4. 启动ElasticSearch，运行文件`elasticsearch-8.15.0/bin/elasticsearch`
+4. 启动ElasticSearch，运行文件`elasticsearch-8.15.0/bin/elasticsearch`  
 ![](pic/004.png)
-5. 第一次运行可能会保存无法验证，先点`完成`
+5. 第一次运行可能会保存无法验证，先点`完成`  
 ![](pic/005.png)
-6. 进入`设置`——`隐私与安全性`——`安全性`
+6. 进入`设置`——`隐私与安全性`——`安全性`  
 ![](pic/006.png)
-7. 点击`仍要打开`——`仍要打开`
+7. 点击`仍要打开`——`仍要打开`  
 ![](pic/007.png)
-8. ElasticSearch会在终端中启动，起一次启动后直接关闭
-9. 打开配置文件`elasticsearch-8.15.0/config/elasticsearch.yml`按照一下模板修改
+8. ElasticSearch会在终端中启动，起一次启动后直接关闭  
+9. 打开配置文件`elasticsearch-8.15.0/config/elasticsearch.yml`按照一下模板修改  
 ```yml
 # Enable security features
 xpack.security.enabled: false
@@ -165,5 +165,5 @@ xpack.security.transport.ssl:
 # Connections are encrypted and require user authentication
 http.host: 127.0.0.1
 ```
-10. 重新启动ElasticSearch，运行文件`elasticsearch-8.15.0/bin/elasticsearch`
+10. 重新启动ElasticSearch，运行文件`elasticsearch-8.15.0/bin/elasticsearch`  
 ![](pic/008.png)

@@ -1,5 +1,6 @@
 from pywebio.input import *
 from pywebio.output import *
+from pywebio.session import *
 import json
 import math
 import UI
@@ -110,7 +111,7 @@ def BatchSearch(es, index_name, head, text, number, client, style):
     if style == "default":    
         while True:
             UI.MainUI()
-            BatchSearch = actions("", [{'label': '📋 查看全部', 'value':1}, {'label': '📦 查看入库', 'value':2}, {'label': '📅 查看预售', 'value':3}, {'label': '❌ 查看退订', 'value':4}, {'label': '💰 查看已售', 'value':5}, {'label': '↩️ 返回主菜单', 'value': 0, 'color': 'warning'}])
+            BatchSearch = actions("批量搜索", [{'label': '📋 查看全部', 'value':1}, {'label': '📦 查看入库', 'value':2}, {'label': '📅 查看预售', 'value':3}, {'label': '❌ 查看退订', 'value':4}, {'label': '💰 查看已售', 'value':5}, {'label': '↩️ 返回主菜单', 'value': 0, 'color': 'warning'}])
 
             match BatchSearch:
                 case 0:
@@ -119,25 +120,37 @@ def BatchSearch(es, index_name, head, text, number, client, style):
                 
                 case 1:
                     clear()
+                    set_env(output_max_width='95%')
                     PageDeviceAll(es, index_name, head, text, number, client, style)
+                    set_env(output_max_width='880px')
                     
                 case 2:
                     clear()
+                    set_env(output_max_width='95%')
                     PageDeviceAllRequired(es, index_name, head, text, number, client, style, "入库")
+                    set_env(output_max_width='880px')
             
                 case 3:
                     clear()
+                    set_env(output_max_width='95%')
                     PageDeviceAllRequired(es, index_name, head, text, number, client, style, "预购")
+                    set_env(output_max_width='880px')
             
                 case 4:
                     clear()
+                    set_env(output_max_width='95%')
                     PageDeviceAllRequired(es, index_name, head, text, number, client, style, "退订")
+                    set_env(output_max_width='880px')
             
                 case 5:
                     clear()
+                    set_env(output_max_width='95%')
                     PageDeviceAllRequired(es, index_name, head, text, number, client, style, "已售")
+                    set_env(output_max_width='880px')
     else:
+        set_env(output_max_width='95%')
         PageDeviceAll(es, index_name, head, text, number, client, style)
+        set_env(output_max_width='880px')
 
 def QuerryKeyword(es, index_name, head, text, style, field, condition):
     if field in text:
@@ -200,7 +213,7 @@ def KeywordSearch(es, index_name, head, text, number, client, style, keyword):
     
     while True:
         search = input_group(
-            "选择检索条件",
+            "关键词检索",
             [
                 radio("搜索条目", options=keyword, name="field"),
                 input("搜索字段", name="condition"),
@@ -219,7 +232,9 @@ def KeywordSearch(es, index_name, head, text, number, client, style, keyword):
                 break
             
             case 1:
+                set_env(output_max_width='95%')
                 PageDeviceKeyword(es, index_name, head, text, number, client, style, search['field'], search['condition'])
+                set_env(output_max_width='880px')
 
 def QuerryFuzzy(es, index_name, head, style, field, condition):
     search = {
@@ -273,7 +288,7 @@ def FuzzySearch(es, index_name, head, text, number, client, style):
     
     while True:
         search = input_group(
-            "选择检索条件",
+            "模糊检索",
             [
                 radio("搜索条目", options = text, name = "field"),
                 input("搜索字段", name="condition"),
@@ -292,7 +307,9 @@ def FuzzySearch(es, index_name, head, text, number, client, style):
                 break
             
             case 1:
+                set_env(output_max_width='95%')
                 PageDeviceFuzzy(es, index_name, head, text, number, client, style, search['field'], search['condition'])
+                set_env(output_max_width='880px')
 
 def QuerrySemantic(es, index_name, head, client, style, field, condition):
     vector = client.embeddings.create(input=condition, model="text-embedding-3-small")
@@ -352,7 +369,7 @@ def SemanticSearch(es, index_name, head, text, number, client, style):
     
     while True:
         search = input_group(
-            "选择检索条件",
+            "语义检索",
             [
                 radio("搜索条目", options = text, name = "field"),
                 input("搜索字段", name="condition"),
@@ -371,4 +388,6 @@ def SemanticSearch(es, index_name, head, text, number, client, style):
                 break
             
             case 1:
+                set_env(output_max_width='95%')
                 PageDeviceSemantic(es, index_name, head, text, number, client, style, search['field'], search['condition'])
+                set_env(output_max_width='880px')

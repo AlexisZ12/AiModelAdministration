@@ -2,6 +2,7 @@ from elasticsearch import Elasticsearch
 from openai import OpenAI
 from pywebio.input import *
 from pywebio.output import *
+from pywebio.session import *
 from pywebio import start_server
 import json
 import UI
@@ -10,7 +11,6 @@ import Check
 import Initialize
 import Search
 import Transform
-
 
 def main():
     UI.MainUI()

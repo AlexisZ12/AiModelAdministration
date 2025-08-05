@@ -162,8 +162,11 @@ def InputData(es, index_name, head, text, client, style):
             if style == 'default':
                 for index, row in df.iterrows():
                     if row['入库时间'] == '0': row['入库时间'] = None
+                    if row['入库时间'] == '': row['入库时间'] = None
                     if row['购入价格'] == '0': row['购入价格'] = None
+                    if row['购入价格'] == '': row['购入价格'] = None
                     if row['卖出价格'] == '0': row['卖出价格'] = None
+                    if row['卖出价格'] == '': row['卖出价格'] = None
                     
                     ModelDescribe = "这是一台品牌为{0}的{1}比例的赛车模型，这台模型的原型车为{2}赛季{3}车队{4}号车手{5}驾驶的{6}。".format(row['品牌'], row['比例'], row['赛季'], row['车队'], row['车号'], row['车手'], row['型号'])
 

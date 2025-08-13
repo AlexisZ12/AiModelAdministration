@@ -175,7 +175,7 @@ pip install elasticsearch==8.15.0 openai pandas openpyxl
 国内使用可尝试使用清华源加速
 
 ```bash
-pip install elasticsearch==8.15.0 openai  pandas  openpyxl  -i https://pypi.tuna.tsinghua.edu.cn/simple
+pip install elasticsearch==8.15.0 openai pandas openpyxl -i https://pypi.tuna.tsinghua.edu.cn/simple
 ```
 
 #### ▎方案二：全局Python环境安装
@@ -190,7 +190,7 @@ pip install elasticsearch==8.15.0 openai pandas openpyxl
 ```
 国内使用可尝试使用清华源加速
 ```bash
-pip install elasticsearch==8.15.0 openai  pandas  openpyxl  -i https://pypi.tuna.tsinghua.edu.cn/simple
+pip install elasticsearch==8.15.0 openai pandas openpyxl -i https://pypi.tuna.tsinghua.edu.cn/simple
 ```
 
 ### 三、ElasticSearch设置

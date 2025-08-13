@@ -1,31 +1,39 @@
-# 🏎 欢迎使用赛车模型库存管理系统
-**赛车模型管理系统** 是一个专为赛车模型爱好者设计的开源免费的库存管理工具，帮助你高效管理和追踪心爱的模型收藏品。
-我们非常重视用户的反馈，如果你有任何建议或发现问题，请通过以下方式联系我：
-- 📂 **项目仓库**: [github.com/AlexisZ12/AiModelAdministration](https://github.com/AlexisZ12/AiModelAdministration)
-- ⭐ **欢迎Star**: 如果喜欢这个项目，请在GitHub上点个Star支持我们
-- 📬 **联系邮箱**: 2242809239@qq.com
-🚀 **当前版本**: v1.0.0 | 🔄 **最后更新**: 2025-08-04
----
-### 🌈 特色功能
-- 完整的模型收藏管理
-- 支持多维度分类系统
-- 数据导入/导出功能
-- 可视化统计报表（待更新）
+# 🏎️ AiModelAdministration
 
-# 项目说明
-还在使用Excel表格管理你的库存吗？
+## 🔍 项目概述
 
-苦于不会使用数据库吗？
+**AiModelAdministration**是一款专为赛车模型爱好者打造的开源工具，结合 Elasticsearch 搜索引擎与 OpenAI 语义理解技术，提供高效、智能的模型收藏管理解决方案。系统支持多维度分类、智能检索和数据批量处理，让您的模型收藏管理更轻松。
 
-​告别繁琐搜索，一句话找到你的库存！​​
+## ✨ 核心功能
+1. 全面的库存管理
+- 支持模型信息的完整生命周期管理（新增、修改、查询、删除）
+- 内置默认模型属性（品牌、比例、赛季、车队等）
+- 支持自定义字段配置，适应不同收藏需求
+2. 智能检索系统
+- 关键词精确检索：按特定属性精准查找
+- 模糊检索：支持近似匹配，容忍输入误差
+- 语义检索：基于 OpenAI 向量嵌入，理解自然语言查询意图
+3. 批量数据处理
+- Excel 模板导入：快速批量添加模型数据
+- 数据导出备份：支持将库存信息导出为 Excel
+- 批量状态筛选：按入库 / 预售 / 退订 / 已售状态分类查看
+4. 灵活的系统配置
+- 支持 Elasticsearch 连接参数自定义
+- 兼容 OpenAI 及兼容 API 服务（支持接口地址与密钥配置）
+- 数据存储路径可配置，方便备份管理
+5. 两种使用模式
+- 默认模式：使用预设的赛车模型属性字段
+- 自定义模式：根据个人需求创建专属字段体系
 
-智能语义驱动的新一代库存管理解决方案​
+## 🛠️ 技术栈
+- 后端
+  - Python 3.8+
+  - Elasticsearch Python SDK
+  - OpenAI Python SDK
+- 交互界面
+  - PyWebIO（用于创建 Web 交互应用）
 
-- 核心引擎：​​**​ElasticSearch​**​ - 业界领先的分布式搜索与分析引擎，确保海量库存数据的高速检索与分析能力。
-- ​人工智能赋能：​​​**​OpenAI Embedding模型​**​ - 我们将您的文字描述（如产品名称、规格、备注等）转化为AI能理解的“数字指纹”，实现了真正的语义级搜索。不再需要精确匹配关键词。
-- ​轻量易用前端：​**​​​Pywebio​**​ - 提供清新简洁的网页操作界面，无需本地安装，浏览器访问即可轻松管理库存，降低使用门槛。
-
-# 功能说明
+## 🚀 功能说明
 1. 可视化的初始化数据库，可以自由构建你个数据库格式，也可使用默认格式  
 <img src="pic/009.png" height="50%" width="50%"/>
 
@@ -46,13 +54,25 @@
 - 语义检索-智能（如搜索世冠即可返回世界冠军的模型）  
 <img src="pic/014.png" height="50%" width="50%" />
 
-5. 一键修改，查找到模型，一键点击即可修改
+5. 一键修改，查找到模型，一键点击即可修改  
 <img src="pic/015.png" height="50%" width="50%" />
 
 6. 已加导出成excel，方便备份数据  
 
-# 项目环境部署指南
-## 版本兼容性说明（仅供参考）
+## 📬 联系我们
+
+- 📂 **GitHub项目仓库**: [AlexisZ12/AiModelAdministration](https://github.com/AlexisZ12/AiModelAdministration)
+- 📂 **爱发电项目仓库**: [AiModelAdministration](https://afdian.com/album/9ed97c4077f211f087955254001e7c00)
+- ⭐ **欢迎Star**: 如果喜欢这个项目，请在GitHub上点个Star支持我们
+- ✉️ **联系邮箱**: 2242809239@qq.com
+- 💬 **微信**: `Alexis_12_Z`
+- 💖 **爱发电**: [AlexisZ12](https://afdian.com/a/AlexisZ12)
+
+
+## 📦 项目环境部署指南
+
+### 版本兼容性说明（仅供参考）
+
 | 组件 | 测试版本 | 兼容范围 |
 |------|----------|----------|
 | Elasticsearch | 8.15.0 | 8.x系列 |
@@ -64,21 +84,25 @@
 > 2. 生产环境建议启用xpack安全模块  
 > 3. Windows系统需使用PowerShell执行Docker命令
 
-## 一、Elasticsearch环境部署
-### ▎方案一：官方渠道下载（推荐）
+### 一、Elasticsearch环境部署
+
+#### ▎方案一：官方渠道下载（推荐）
+
 | 组件 | 下载地址 |
 |------|----------|
 | Elasticsearch | https://www.elastic.co/downloads/past-releases/elasticsearch-8-15-0 |
 | IK分词器 | https://release.infinilabs.com/analysis-ik/stable/elasticsearch-analysis-ik-8.15.0.zip |
 | Kibana（可选）| https://www.elastic.co/downloads/past-releases/kibana-8-15-0 |
 
-### ▎方案二：网络云盘下载
+#### ▎方案二：网络云盘下载
+
 | 资源平台 | 下载地址 |
 |----------|----------|
 | 阿里云盘 | https://www.alipan.com/s/DSAeUFYeC11 |
 | 夸克网盘 | https://pan.quark.cn/s/260c70bb004a |
 
-### ▎方案三：Docker容器化部署
+#### ▎方案三：Docker容器化部署
+
 **Elasticsearch独立部署**：
 
 ```bash
@@ -96,6 +120,7 @@ docker run -d --name elasticsearch \
 ```
 
 **Elasticsearch + Kibana联合部署**：
+
 创建专用网络
 
 ```bash
@@ -131,8 +156,10 @@ docker run -d --name kibana \
 
 ---
 
-## 二、Python环境配置
-### ▎方案一：Conda虚拟环境部署（推荐）
+### 二、Python环境配置
+
+#### ▎方案一：Conda虚拟环境部署（推荐）
+
 创建Python 3.10虚拟环境
 
 ```bash
@@ -151,7 +178,8 @@ pip install elasticsearch==8.15.0 openai pandas openpyxl
 pip install elasticsearch==8.15.0 openai  pandas  openpyxl  -i https://pypi.tuna.tsinghua.edu.cn/simple
 ```
 
-### ▎方案二：全局Python环境安装
+#### ▎方案二：全局Python环境安装
+
 确保Python版本≥3.10
 ```bash
 python --version
@@ -165,7 +193,8 @@ pip install elasticsearch==8.15.0 openai pandas openpyxl
 pip install elasticsearch==8.15.0 openai  pandas  openpyxl  -i https://pypi.tuna.tsinghua.edu.cn/simple
 ```
 
-## 三、ElasticSearch设置
+### 三、ElasticSearch设置
+
 初次使用需要安装IK分词器插件，并做部分设置，下面以MacOS为例进行初始化。  
 1. 解压elasticsearch和IK分词器插件  
 <img src="pic/001.png"  height="100" />

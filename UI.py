@@ -8,7 +8,7 @@ def MainUI():
 我们非常重视用户的反馈，如果你有任何建议或发现问题，请通过以下方式联系我：
 - 📂 **项目仓库**: [github.com/AlexisZ12/AiModelAdministration](https://github.com/AlexisZ12/AiModelAdministration)
 - ⭐ **欢迎Star**: 如果喜欢这个项目，请在GitHub上点个Star支持我们
-- 📬 **联系邮箱**: 2242809239@qq.com
+- ✉️ **联系邮箱**: 2242809239@qq.com
 🚀 **当前版本**: v1.0.0 | 🔄 **最后更新**: 2025-08-04
 ---
 ### 🌈 特色功能

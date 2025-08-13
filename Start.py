@@ -14,8 +14,6 @@ import Transform
 
 def main():
     UI.MainUI()
-    actions(buttons=[{'label': '🚀 开始', 'value': 0}])
-    clear()
     
     if not Config.CheckFirst():
         toast("⚡ 开始初始化配置文件...")

@@ -1,22 +1,34 @@
 from pywebio.output import *
+from pywebio.input import *
 import Modify
 
 def MainUI():
     put_markdown("""
-# 🏎 欢迎使用赛车模型库存管理系统
-**赛车模型管理系统** 是一个专为赛车模型爱好者设计的开源免费的库存管理工具，帮助你高效管理和追踪心爱的模型收藏品。
-我们非常重视用户的反馈，如果你有任何建议或发现问题，请通过以下方式联系我：
-- 📂 **项目仓库**: [github.com/AlexisZ12/AiModelAdministration](https://github.com/AlexisZ12/AiModelAdministration)
+# 🏎 AiModelAdministration
+
+## 🌟 项目简介
+**AiModelAdministration** 专为模型收藏爱好者打造，通过AI语义理解与高效检索技术，让您的每一件赛车模型都得到精准管理。无论是记录收藏细节、追踪状态变化，还是快速查找心仪藏品，都能轻松实现。
+- 📂 **GitHub项目仓库**: [AlexisZ12/AiModelAdministration](https://github.com/AlexisZ12/AiModelAdministration)
 - ⭐ **欢迎Star**: 如果喜欢这个项目，请在GitHub上点个Star支持我们
 - ✉️ **联系邮箱**: 2242809239@qq.com
-🚀 **当前版本**: v1.0.0 | 🔄 **最后更新**: 2025-08-04
----
-### 🌈 特色功能
-- 完整的模型收藏管理
-- 支持多维度分类系统
-- 数据导入/导出功能
-- 可视化统计报表（待更新）
+- 💬 **微信**: `Alexis_12_Z`
+- 💖 **爱发电**: [AlexisZ12](https://afdian.com/a/AlexisZ12)
+
+## ✨ 核心功能
+- 🚗 全维度模型信息管理（品牌/比例/赛季/状态等）
+- 🔍 三重检索系统（关键词/模糊/语义理解）
+- 📥 批量数据导入导出（支持Excel格式）
+- 🛠️ 自定义字段配置，适配个性化收藏需求
+- 📊 收藏状态可视化统计
+
+## 🔑 开始使用
+1. 配置 **Elasticsearch** 连接信息
+2. 填写 **OpenAI API** 密钥（用于语义检索）
+3. 选择使用模式（默认/自定义字段）
+4. 启动系统，开始管理您的收藏！
     """)
+    actions(buttons=[{'label': '🚀 开始', 'value': 0}])
+    clear()
 
 def ShowTable(es, index_name, head, text, number, client, style, page, data):
     showlist = []

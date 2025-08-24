@@ -27,8 +27,6 @@ def MainUI():
 3. 选择使用模式（默认/自定义字段）
 4. 启动系统，开始管理您的收藏！
     """)
-    actions(buttons=[{'label': '🚀 开始', 'value': 0}])
-    clear()
 
 def ShowTable(es, index_name, head, text, number, client, style, page, data):
     showlist = []

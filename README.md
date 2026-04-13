@@ -1,8 +1,27 @@
+<div align="center">
+
 # 🏎️ AiModelAdministration
+
+一款专为赛车模型爱好者打造的智能收藏管理工具。结合 Elasticsearch 搜索引擎与 OpenAI 语义理解技术，支持多维度分类、智能检索（关键词/模糊/语义）、Excel批量导入导出，让您的模型收藏管理更轻松高效。
+
+[![MIT License](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
+[![Python](https://img.shields.io/badge/Python-3.10+-yellow.svg)](https://www.python.org/)
+[![Elasticsearch](https://img.shields.io/badge/Elasticsearch-8.15-green.svg)](https://www.elastic.co/)
+[![OpenAI](https://img.shields.io/badge/OpenAI-API-red.svg)](https://openai.com/)
+[![PyWebIO](https://img.shields.io/badge/PyWebIO-Web%20UI-purple.svg)](https://pywebio.readthedocs.io/)
+[![pandas](https://img.shields.io/badge/pandas-Data%20Processing-orange.svg)](https://pandas.pydata.org/)
+
+[中文](README.md) | [English](README_EN.md)
+
+</div>
+
+---
 
 ## 🔍 项目概述
 
 **AiModelAdministration**是一款专为赛车模型爱好者打造的开源工具，结合 Elasticsearch 搜索引擎与 OpenAI 语义理解技术，提供高效、智能的模型收藏管理解决方案。系统支持多维度分类、智能检索和数据批量处理，让您的模型收藏管理更轻松。
+
+---
 
 ## ✨ 核心功能
 1. 全面的库存管理
@@ -25,6 +44,8 @@
 - 默认模式：使用预设的赛车模型属性字段
 - 自定义模式：根据个人需求创建专属字段体系
 
+---
+
 ## 🛠️ 技术栈
 - 后端
   - Python 3.8+
@@ -32,6 +53,8 @@
   - OpenAI Python SDK
 - 交互界面
   - PyWebIO（用于创建 Web 交互应用）
+
+---
 
 ## 🚀 功能说明
 1. 可视化的初始化数据库，可以自由构建你个数据库格式，也可使用默认格式  
@@ -59,15 +82,7 @@
 
 6. 已加导出成excel，方便备份数据  
 
-## 📬 联系我们
-
-- 📂 **GitHub项目仓库**: [AlexisZ12/AiModelAdministration](https://github.com/AlexisZ12/AiModelAdministration)
-- 📂 **爱发电项目仓库**: [AiModelAdministration](https://afdian.com/album/9ed97c4077f211f087955254001e7c00)
-- ⭐ **欢迎Star**: 如果喜欢这个项目，请在GitHub上点个Star支持我们
-- ✉️ **联系邮箱**: 2242809239@qq.com
-- 💬 **微信**: `Alexis_12_Z`
-- 💖 **爱发电**: [AlexisZ12](https://afdian.com/a/AlexisZ12)
-
+---
 
 ## 📦 项目环境部署指南
 
@@ -154,8 +169,6 @@ docker run -d --name kibana \
 
 > **注意**：将`${LOCAL_DATA_PATH}`替换为实际存储路径，Kibana默认访问地址：http://localhost:5601
 
----
-
 ### 二、Python环境配置
 
 #### ▎方案一：Conda虚拟环境部署（推荐）
@@ -240,3 +253,22 @@ http.host: 127.0.0.1
 
 10. 重新启动ElasticSearch，运行文件`elasticsearch-8.15.0/bin/elasticsearch`  
 <img src="pic/008.png"  height="200" />
+
+---
+
+## 🤝 支持与联系
+
+| 渠道 | 链接 |
+|:----:|:-----|
+| 📂 **GitHub** | [AlexisZ12/AiModelAdministration](https://github.com/AlexisZ12/AiModelAdministration) |
+| 🎁 **爱发电** | [AlexisZ12](https://afdian.com/a/AlexisZ12) |
+| 📧 **邮箱** | 2242809239@qq.com |
+| 💬 **微信** | `Alexis_12_Z` |
+
+---
+
+<div align="center">
+
+**如果觉得这个项目有帮助，欢迎 ⭐ Star 支持一下！**
+
+</div>
